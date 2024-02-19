@@ -40,12 +40,12 @@ export default function Index() {
 
   return (
     <>
-      <main className="block max-w-[1280] h-screen bg-blue-300">
-        <section className="flex max-w-[1280] h-fit py-4 bg-blue-400">
+      <main className="block w-screen h-fit min-h-screen bg-blue-300 mx-auto">
+        <section className="flex w-screen h-fit py-2 bg-blue-400 sm:py-4">
           <Header foto='./assets/img/fotoJuan.jpg' nombre="Juan Eguía Abad" ocupacion="Programador autodidacta"/>
         </section>
 
-        <section className="flex max-w-[1280] h-fit py-4 place-content-center bg-blue-200">
+        <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 sm:place-content-center sm:py-4">
           <Navbar />
         </section>
       </main>

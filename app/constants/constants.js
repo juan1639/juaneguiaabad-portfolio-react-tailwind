@@ -10,7 +10,7 @@ export class Settings {
     static contador = undefined;
 
     static txtNavbar = [
-        'Sobre mi',
+        'Sobre mí',
         'Mis herramientas',
         'Proyectos',
         'Vídeos'
