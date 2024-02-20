@@ -1,5 +1,4 @@
 
-// =================================================================================
 export class Settings {
     
     static endpoint = './proyectos.json';
@@ -13,7 +12,8 @@ export class Settings {
         'Sobre mí',
         'Mis herramientas',
         'Proyectos',
-        'Vídeos'
+        'Vídeos',
+        'Repositorios'
     ];
 
     static urlNavbar = [

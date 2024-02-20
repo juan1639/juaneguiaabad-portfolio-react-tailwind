@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-export const Navbar = ({mostrar, setMostrar}) => {
+export const Navbar = ({setMostrar}) => {
 
     const [oculta, setOculta] = useState(true)
 
@@ -16,7 +16,8 @@ export const Navbar = ({mostrar, setMostrar}) => {
 
     const handleOption = (children) => {
         console.log(children)
-        setMostrar(!mostrar)
+        setMostrar(children)
+        setOculta(!oculta)
     }
 
     return (
@@ -34,8 +35,8 @@ export const Navbar = ({mostrar, setMostrar}) => {
             </ul>
 
             {!oculta && 
-                <div className="flex-column z-10 w-screen min-h-screen bg-blue-100 py-6 px-4 rounded-t sm:hidden">
-                    <div className="block w-full h-1 mb-4 bg-blue-200"></div>
+                <div className="flex-column z-10 w-screen min-h-screen bg-blue-100 py-6 px-4 rounded-t bg-gradient-to-r from-cyan-300 to-cyan-100 sm:hidden">
+                    <div className="block w-full h-[1px] mb-4 bg-cyan-400"></div>
                     {
                         txtNavbar.map(txt => {
                             return <HeroMobile key={txt} handleOption={handleOption}>{txt}</HeroMobile>
@@ -61,7 +62,7 @@ const HeroMobile = ({children, handleOption}) => {
 
     return (
         <>
-            <li className="flex cursor-pointer hover:bg-blue-100 py-1 px-4 font-medium text-gray-600 rounded sm:hidden"
+            <li className="flex cursor-pointer hover:bg-blue-100 py-1 px-3 font-medium text-gray-700 rounded sm:hidden"
                 onClick={() => handleOption(children)}
             >{children}</li>
         </>

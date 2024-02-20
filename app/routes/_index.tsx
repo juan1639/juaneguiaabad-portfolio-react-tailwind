@@ -21,7 +21,7 @@ export default function Index() {
   const [infoJsonRepos, setInfoJsonRepos] = useState({})
   const [infoJsonVideos, setInfoJsonVideos] = useState({})
 
-  const [mostrar, setMostrar] = useState(false)
+  const [mostrar, setMostrar] = useState('')
 
   const endPoint = 'https://juan1639.github.io/JuanEguiaAbad-portfolio-react/proyectos.json'
   // console.log('url_base', Settings.endpointUrl.slice(0, -14))
@@ -44,17 +44,25 @@ export default function Index() {
 
   return (
     <>
-      <main className="block w-screen h-fit min-h-screen bg-blue-300 mx-auto">
-        <section className="flex w-screen h-fit py-2 bg-blue-400 sm:py-4">
+      <main className="block w-screen h-fit min-h-screen bg-gradient-to-r from-blue-200 to-blue-300 mx-auto">
+        <section className="flex w-screen h-fit py-2 bg-gradient-to-r from-blue-300 to-blue-400 sm:py-4">
           <Header foto='./assets/img/fotoJuan.jpg' nombre="Juan Eguía Abad" ocupacion="Programador autodidacta"/>
         </section>
 
-        <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 sm:place-content-center sm:py-4">
-          <Navbar mostrar={mostrar} setMostrar={setMostrar}/>
+        <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 shadow shadow-white-200 sm:place-content-center sm:py-4">
+          <Navbar setMostrar={setMostrar}/>
         </section>
 
         <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
-          {mostrar && <MisProyectos json={infoJsonVideos} txtH2="Vídeos" txtBoton="" />}
+          {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}
+        </section>
+
+        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
+          {mostrar === 'Proyectos' && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
+        </section>
+
+        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
+          {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}
         </section>
       </main>
     </>
