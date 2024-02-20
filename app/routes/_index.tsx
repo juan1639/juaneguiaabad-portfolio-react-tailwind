@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Navbar } from '../components/Navbar'
-import { Videos } from '../components/Videos'
+import { MisProyectos } from '../components/MisProyectos'
 import { Settings } from '../constants/constants'
 
 export default function Index() {
@@ -53,8 +53,8 @@ export default function Index() {
           <Navbar mostrar={mostrar} setMostrar={setMostrar}/>
         </section>
 
-        <section className="flex w-9/12 h-fit place-content-start py-2 bg-blue-900 sm:place-content-start sm:py-4">
-          {mostrar && <Videos/>}
+        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
+          {mostrar && <MisProyectos json={infoJsonVideos} txtH2="Vídeos" txtBoton="" />}
         </section>
       </main>
     </>
