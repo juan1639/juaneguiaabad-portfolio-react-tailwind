@@ -11,6 +11,7 @@ export const meta: MetaFunction = () => {
 import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Navbar } from '../components/Navbar'
+import { Videos } from '../components/Videos'
 import { Settings } from '../constants/constants'
 
 export default function Index() {
@@ -20,7 +21,10 @@ export default function Index() {
   const [infoJsonRepos, setInfoJsonRepos] = useState({})
   const [infoJsonVideos, setInfoJsonVideos] = useState({})
 
+  const [mostrar, setMostrar] = useState(false)
+
   const endPoint = 'https://juan1639.github.io/JuanEguiaAbad-portfolio-react/proyectos.json'
+  // console.log('url_base', Settings.endpointUrl.slice(0, -14))
 
   useEffect(() => {
 
@@ -46,7 +50,11 @@ export default function Index() {
         </section>
 
         <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 sm:place-content-center sm:py-4">
-          <Navbar />
+          <Navbar mostrar={mostrar} setMostrar={setMostrar}/>
+        </section>
+
+        <section className="flex w-9/12 h-fit place-content-start py-2 bg-blue-900 sm:place-content-start sm:py-4">
+          {mostrar && <Videos/>}
         </section>
       </main>
     </>

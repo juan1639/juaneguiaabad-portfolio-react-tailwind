@@ -16,6 +16,13 @@ export class Settings {
         'Vídeos'
     ];
 
+    static urlNavbar = [
+        `${Settings.endpointUrl.slice(0, -14)}sobremi`,
+        `${Settings.endpointUrl.slice(0, -14)}misherramientas`,
+        `${Settings.endpointUrl.slice(0, -14)}proyectos`,
+        `${Settings.endpointUrl.slice(0, -14)}videos`
+    ];
+
     static valores_iniciales = {
         
         carets_h2: [
