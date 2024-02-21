@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-export const Navbar = ({setMostrar}) => {
+export const Navbar = ({mostrar, setMostrar}) => {
 
     const [oculta, setOculta] = useState(true)
 
@@ -29,7 +29,7 @@ export const Navbar = ({setMostrar}) => {
                 </span>
                 {
                     txtNavbar.map(txt => {
-                        return <Hero key={txt} handleOption={handleOption}>{txt}</Hero>
+                        return <Hero key={txt} handleOption={handleOption} mostrar={mostrar}>{txt}</Hero>
                     })
                 }
             </ul>
@@ -48,11 +48,15 @@ export const Navbar = ({setMostrar}) => {
     )
 } 
 
-const Hero = ({children, handleOption}) => {
+const Hero = ({children, handleOption, mostrar}) => {
+
+    const agregar = children === mostrar ? " sm:bg-blue-100" : ""
+    const focus = "hidden sm:flex sm:cursor-pointer sm:hover:bg-blue-100 sm:py-1 sm:px-4 sm:rounded" + agregar
+    console.log(mostrar, '..', children)
 
     return (
         <>
-            <li className="hidden sm:flex sm:cursor-pointer sm:hover:bg-blue-100 sm:py-1 sm:px-4 sm:rounded"
+            <li className={focus}
                 onClick={() => handleOption(children)}>{children}</li>
         </>
     ) 

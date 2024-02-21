@@ -44,26 +44,25 @@ export default function Index() {
 
   return (
     <>
-      <main className="block w-screen h-fit min-h-screen bg-gradient-to-r from-blue-200 to-blue-300 mx-auto">
-        <section className="flex w-screen h-fit py-2 bg-gradient-to-r from-blue-300 to-blue-400 sm:py-4">
+      <main className="block w-screen h-fit min-h-screen bg-gradient-to-b from-blue-200 to-blue-400 mx-auto">
+
+        <section className="flex w-screen h-fit py-2 bg-gradient-to-b from-blue-300 to-blue-500 sm:py-4">
           <Header foto='./assets/img/fotoJuan.jpg' nombre="Juan Eguía Abad" ocupacion="Programador autodidacta"/>
         </section>
 
         <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 shadow shadow-white-200 sm:place-content-center sm:py-4">
-          <Navbar setMostrar={setMostrar}/>
+          <Navbar mostrar={mostrar} setMostrar={setMostrar}/>
         </section>
 
-        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
+        <section 
+          className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4"
+        >
           {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}
-        </section>
-
-        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
           {mostrar === 'Proyectos' && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
+          {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}
+
         </section>
 
-        <section className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4">
-          {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}
-        </section>
       </main>
     </>
   );
