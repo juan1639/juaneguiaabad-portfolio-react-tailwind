@@ -7,11 +7,11 @@ export const MisProyectos = ({json, txtH2, txtBoton}) => {
 
     return (
         <>
-            <div className="flex w-full h-fit mx-auto px-3 py-2 rounded bg-emerald-300 shadow shadow-slate-200 sm:px-6 sm:py-3">
-                {txtBoton === 'Ver' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faCode}/>}
-                {txtBoton === 'Jugar' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faGamepad}/>}
-                {txtBoton === '' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faCirclePlay}/>}
-                <h2 className='flex w-fit h-fit font-bold text-2xl text-gray-700'>{txtH2}</h2>
+            <div className="flex w-full h-fit mx-auto px-3 py-2 rounded bg-emerald-300 dark:bg-neutral-500 shadow shadow-slate-200 sm:px-6 sm:py-3">
+                {txtBoton === 'Ver' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 dark:text-slate-200 mt-2 mr-2" icon={faCode}/>}
+                {txtBoton === 'Jugar' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 dark:text-slate-200 mt-2 mr-2" icon={faGamepad}/>}
+                {txtBoton === '' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 dark:text-slate-200 mr-2" icon={faCirclePlay}/>}
+                <h2 className='flex w-fit h-fit font-bold text-2xl text-gray-700 dark:text-slate-300'>{txtH2}</h2>
             </div>
 
             {
@@ -49,7 +49,7 @@ export const Tarjeta = ({img, href, nombre, descripcion, txtBoton, lenguaje}) =>
     return (          
         <>
             <div 
-                className="block w-full h-full my-6 rounded-lg bg-blue-400 shadow shadow-stone-700 hover:scale-110 transition duration-1000 ease-in-out sm:w-5/12 sm:my-10"
+                className="block w-full h-full my-6 rounded-lg bg-blue-400 dark:bg-neutral-500 shadow shadow-stone-700 hover:scale-110 transition duration-1000 ease-in-out sm:w-5/12 sm:my-10"
             >
                 <a className="relative w-fit h-fit sm:max-h-50" href={href} target="_blank">
 

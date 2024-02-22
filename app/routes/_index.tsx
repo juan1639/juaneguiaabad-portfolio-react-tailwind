@@ -10,6 +10,7 @@ export const meta: MetaFunction = () => {
 // --------------------------------------------------------------------
 import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
+import { Darkmode } from '../components/Darkmode'
 import { Navbar } from '../components/Navbar'
 import { Sobremi } from '../components/Sobremi'
 import { MisProyectos } from '../components/MisProyectos'
@@ -22,7 +23,10 @@ export default function Index() {
   const [infoJsonRepos, setInfoJsonRepos] = useState({})
   const [infoJsonVideos, setInfoJsonVideos] = useState({})
 
-  const [mostrar, setMostrar] = useState('')
+  const [mostrar, setMostrar] = useState('Proyectos')
+  const [fetchDone, setFetchDone] = useState(false)
+
+  const [modoOscuro, setModoOscuro] = useState(false)
 
   const endPoint = 'https://juan1639.github.io/JuanEguiaAbad-portfolio-react/proyectos.json'
   // console.log('url_base', Settings.endpointUrl.slice(0, -14))
@@ -37,22 +41,34 @@ export default function Index() {
         setInfoJsonRepos(response.recursos)
         setInfoJsonVideos(response.videos)
         console.log(response)
+        setFetchDone(true)
       })
-    
+  
   }, [])
+
+  useEffect(() => {
+    document.querySelector('html')?.classList.toggle('dark')
+  }, [modoOscuro])
 
   // const dataFooter = Settings.dataFooter
 
+  // bg-gradient-to-b from-blue-200 to-blue-400
+  // bg-gradient-to-b from-blue-300 to-blue-500
+
   return (
     <>
-      <main className="block w-screen h-fit min-h-screen bg-gradient-to-b from-blue-200 to-blue-400 mx-auto">
+      <main className="block w-screen h-fit min-h-screen bg-blue-300 dark:bg-slate-700 mx-auto">
 
-        <section className="flex w-screen h-fit py-2 bg-gradient-to-b from-blue-300 to-blue-500 sm:py-4">
+        <section className="flex w-screen h-fit py-2 bg-cyan-700 dark:bg-slate-800 sm:py-4">
           <Header foto='./assets/img/fotoJuan.jpg' nombre="Juan Eguía Abad" ocupacion="Programador autodidacta"/>
         </section>
 
-        <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 shadow shadow-white-200 sm:place-content-center sm:py-4">
+        <section className="flex w-screen h-fit place-content-start py-2 bg-blue-200 dark:bg-slate-600 shadow shadow-white-200 sm:place-content-center sm:py-4">
           <Navbar mostrar={mostrar} setMostrar={setMostrar}/>
+        </section>
+
+        <section className="flex w-11/12 mx-auto h-fit px-2 py-2 sm:px-2 sm:py-6">
+          <Darkmode modoOscuro={modoOscuro} setModoOscuro={setModoOscuro}/>
         </section>
 
         <section 
@@ -62,10 +78,11 @@ export default function Index() {
           mostrar === 'Sobre mí' && <Sobremi txtH2="Sobre mí"
             parrafo1='Me gusta programar de forma autodidacta, siendo mi principal afición el desarrollo de pequeños videojuegos. Concretamente la lógica de programación de dichos juegos es la parte que más me atrae.'
             parrafo2='Los proyectos que se pueden ver en esta página están hechos en su mayoría en vanilla javaScript.'
+            modoOscuro={modoOscuro}
           />
           }
           {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}
-          {mostrar === 'Proyectos' && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
+          {mostrar === 'Proyectos' && fetchDone && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
           {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}
 
         </section>

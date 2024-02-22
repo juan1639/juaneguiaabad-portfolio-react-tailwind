@@ -22,7 +22,7 @@ export const Navbar = ({mostrar, setMostrar}) => {
 
     return (
         <>
-            <ul className="flex text-gray-600 sm:gap-20 sm:text-lg">
+            <ul className="flex text-gray-600 dark:text-slate-400 sm:gap-20 sm:text-lg">
                 <span className="flex w-12 h-12 justify-center items-center ml-2 rounded-lg bg-blue-100 sm:hidden"
                     onClick={handleClick}>
                     <FontAwesomeIcon class="h-4/5" icon={faAlignJustify}/>
