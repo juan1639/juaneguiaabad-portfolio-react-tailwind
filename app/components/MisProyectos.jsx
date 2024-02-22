@@ -49,7 +49,7 @@ export const Tarjeta = ({img, href, nombre, descripcion, txtBoton, lenguaje}) =>
     return (          
         <>
             <div 
-                className="block w-full h-full my-6 rounded-lg bg-blue-400 dark:bg-neutral-500 shadow shadow-stone-700 hover:scale-110 transition duration-1000 ease-in-out sm:w-5/12 sm:my-10"
+                className="block w-full h-full my-6 rounded-lg bg-blue-400 dark:bg-neutral-500 shadow shadow-stone-700 dark:shadow-stone-100 hover:scale-110 transition duration-1000 ease-in-out sm:w-5/12 sm:my-10"
             >
                 <a className="relative w-fit h-fit sm:max-h-50" href={href} target="_blank">
 

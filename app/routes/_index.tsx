@@ -26,7 +26,7 @@ export default function Index() {
   const [mostrar, setMostrar] = useState('Proyectos')
   const [fetchDone, setFetchDone] = useState(false)
 
-  const [modoOscuro, setModoOscuro] = useState(false)
+  const [modoOscuro, setModoOscuro] = useState(true)
 
   const endPoint = 'https://juan1639.github.io/JuanEguiaAbad-portfolio-react/proyectos.json'
   // console.log('url_base', Settings.endpointUrl.slice(0, -14))
@@ -47,7 +47,12 @@ export default function Index() {
   }, [])
 
   useEffect(() => {
-    document.querySelector('html')?.classList.toggle('dark')
+    // document.querySelector('html')?.classList.toggle('dark')
+    if (modoOscuro) {
+      document.querySelector('html')?.classList.add('dark')
+    } else {
+      document.querySelector('html')?.classList.remove('dark')
+    }
   }, [modoOscuro])
 
   // const dataFooter = Settings.dataFooter
@@ -78,7 +83,6 @@ export default function Index() {
           mostrar === 'Sobre mí' && <Sobremi txtH2="Sobre mí"
             parrafo1='Me gusta programar de forma autodidacta, siendo mi principal afición el desarrollo de pequeños videojuegos. Concretamente la lógica de programación de dichos juegos es la parte que más me atrae.'
             parrafo2='Los proyectos que se pueden ver en esta página están hechos en su mayoría en vanilla javaScript.'
-            modoOscuro={modoOscuro}
           />
           }
           {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}

@@ -2,7 +2,7 @@ import { Settings } from '../constants/constants.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faCode, faCircleUser, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 
-export const Sobremi = ({txtH2, parrafo1, parrafo2, modoOscuro}) => {
+export const Sobremi = ({txtH2, parrafo1, parrafo2}) => {
 
     return (
         <>
@@ -28,7 +28,7 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2, modoOscuro}) => {
                     </div>
 
                     <div className='block w-full h-fit py-6 my-6 rounded-lg sm:w-5/12 sm:h-fit sm:py-14 sm:my-14'>
-                        <div className='block w-full h-fit rounded-lg bg-blue-500 shadow shadow-stone-700 sm:w-full sm:h-fit'>
+                        <div className='block w-full h-fit rounded-lg bg-blue-500 shadow shadow-stone-700 dark:shadow-stone-100 sm:w-full sm:h-fit'>
                             <div className='block w-full h-fit bg-cyan-200 dark:bg-neutral-400 rounded-lg'>
                                 <h1 className='text-center text-xl py-2 bg-cyan-300 dark:bg-neutral-500 font-bold rounded-t-lg sm:text-2xl'>Ver otros de mis portfolios hechos en:</h1>
                                 <ul className='w-full h-fit p-6 mt-6'>
@@ -45,14 +45,14 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2, modoOscuro}) => {
                                     </a>
                                 </ul>
                             </div>
-
-                            
                         </div>
                     </div>
                 </section>
 
                 <section className="flex w-full h-fit rounded-lg justify-start">
-                    <div className="flex flex-wrap w-full h-fit my-6 rounded-lg justify-around bg-blue-500 dark:bg-neutral-500 shadow shadow-stone-700 sm:w-5/12 sm:my-14">
+                    <div 
+                        className="flex flex-wrap w-full h-fit my-6 rounded-lg justify-around bg-blue-500 dark:bg-neutral-500 shadow shadow-stone-700 dark:shadow-stone-100 sm:w-5/12 sm:my-14"
+                    >
    
                         <h3 className='flex w-fit h-fit p-4 text-xl font-bold text-gray-800 sm:text-2xl'>
                             <FontAwesomeIcon className="text-lg font-bold pl-2 mt-2 mr-4" icon={faUserGraduate}/>Mis títulos
@@ -66,7 +66,6 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2, modoOscuro}) => {
                                         key={Settings.misTitulos[titulo].id}
                                         id={Settings.misTitulos[titulo].id}
                                         href={Settings.misTitulos[titulo].href}
-                                        modoOscuro={modoOscuro}
                                     >{Settings.misTitulos[titulo].texto}</Titulo>
                                 )
                             })
@@ -79,23 +78,20 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2, modoOscuro}) => {
     )
 }
 
-export const Titulo = ({id, href, modoOscuro, children}) => {
+export const Titulo = ({id, href, children}) => {
 
     // const preFix = 'https://juan1639.github.io/juaneguiaabad/'
     const preFix = Settings.misTitulosUrlBase
     const urlTitulo = preFix + href
 
-    let toggleDarkClass = 'flex w-full h-fit bg-gradient-to-b from-cyan-400 to-blue-500 my-2 px-6 py-2'
-
-    if (modoOscuro) toggleDarkClass = 'flex w-full h-fit bg-gradient-to-b from-neutral-300 to-neutral-500 my-2 px-6 py-2'
-
     return (
         <>
-            <figure className={toggleDarkClass}>
-                <a className='flex gap-4  hover:translate-x-2 hover:scale-115' id={id} href={urlTitulo} target="_blank">
+            <figure className='flex flex-wrap w-full h-fit bg-cyan-400 dark:bg-neutral-400 px-6 py-2'>
+                <a className='flex gap-4 mt-2 hover:translate-x-2 hover:scale-115 sm:mt-6' id={id} href={urlTitulo} target="_blank">
                     <img className="w-12 h-12" src="./assets/img/titulo-ico.svg" alt="imagen icono html"/>
                     <figcaption className="text-base italic sm:text-lg">{children}</figcaption>
                 </a>
+                <hr className="w-11/12 h-[1px] mx-auto mt-1 bg-cyan-500 border-0 rounded dark:bg-gray-500 sm:mt-2"/>
             </figure>
         </>
     )
