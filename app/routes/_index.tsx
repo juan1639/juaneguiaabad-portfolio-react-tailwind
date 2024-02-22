@@ -11,6 +11,7 @@ export const meta: MetaFunction = () => {
 import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Navbar } from '../components/Navbar'
+import { Sobremi } from '../components/Sobremi'
 import { MisProyectos } from '../components/MisProyectos'
 import { Settings } from '../constants/constants'
 
@@ -57,6 +58,12 @@ export default function Index() {
         <section 
           className="block w-11/12 h-fit py-2 mx-auto rounded sm:place-content-start sm:py-4"
         >
+          {
+          mostrar === 'Sobre mí' && <Sobremi txtH2="Sobre mí"
+            parrafo1='Me gusta programar de forma autodidacta, siendo mi principal afición el desarrollo de pequeños videojuegos. Concretamente la lógica de programación de dichos juegos es la parte que más me atrae.'
+            parrafo2='Los proyectos que se pueden ver en esta página están hechos en su mayoría en vanilla javaScript.'
+          />
+          }
           {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}
           {mostrar === 'Proyectos' && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
           {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}

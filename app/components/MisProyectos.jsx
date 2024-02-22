@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faCaretLeft, faCaretRight, faCaretUp, faVideo, faCode, faGamepad } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faCaretUp, faPlay, faCirclePlay, faCode, faGamepad } from '@fortawesome/free-solid-svg-icons'
 
 export const MisProyectos = ({json, txtH2, txtBoton}) => {
 
@@ -8,9 +8,10 @@ export const MisProyectos = ({json, txtH2, txtBoton}) => {
     return (
         <>
             <div className="flex w-full h-fit mx-auto px-3 py-2 rounded bg-emerald-300 shadow shadow-slate-200 sm:px-6 sm:py-3">
+                {txtBoton === 'Ver' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faCode}/>}
+                {txtBoton === 'Jugar' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faGamepad}/>}
+                {txtBoton === '' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 mr-2" icon={faCirclePlay}/>}
                 <h2 className='flex w-fit h-fit font-bold text-2xl text-gray-700'>{txtH2}</h2>
-                {txtBoton === 'Ver' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 ml-2" icon={faCode}/>}
-                {txtBoton === 'Jugar' && <FontAwesomeIcon className="text-lg font-bold text-gray-700 mt-2 ml-2" icon={faGamepad}/>}
             </div>
 
             {

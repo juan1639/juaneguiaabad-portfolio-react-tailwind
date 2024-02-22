@@ -52,7 +52,7 @@ const Hero = ({children, handleOption, mostrar}) => {
 
     const agregar = children === mostrar ? " sm:bg-blue-100" : ""
     const focus = "hidden sm:flex sm:cursor-pointer sm:hover:bg-blue-100 sm:py-1 sm:px-4 sm:rounded" + agregar
-    console.log(mostrar, '..', children)
+    // console.log(mostrar, '..', children)
 
     return (
         <>
