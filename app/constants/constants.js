@@ -46,20 +46,22 @@ export class Settings {
         './assets/img/vite.svg'
     ];
 
+    static misTitulosUrlBase = 'https://juan1639.github.io/juaneguiaabad/';
+
     static misTitulos = {
         html: {
             id: "titulo-html",
-            href: "./titulo-frontend.html",
+            href: "titulo-frontend.html",
             texto: "HTML5 y CSS3"
         },
         react: {
             id: "titulo-react",
-            href: "./titulo-react.html",
+            href: "titulo-react.html",
             texto: "JavaScript Avanzado"
         },
         java: {
             id: "titulo-java",
-            href: "./titulo-appweb-java.html",
+            href: "titulo-appweb-java.html",
             texto: "Desarrollo apps web Java"
         }
     };

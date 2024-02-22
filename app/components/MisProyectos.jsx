@@ -42,7 +42,7 @@ export const Tarjeta = ({img, href, nombre, descripcion, txtBoton, lenguaje}) =>
 
     const asset = './assets'
     const ruta = asset + img.slice(5)
-    console.log(ruta)
+    // console.log(ruta)
     
     const rutaLenguajeIco = asset + lenguaje.slice(5);
 
