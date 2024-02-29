@@ -14,20 +14,20 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2}) => {
                 </div>
 
                 <section className="flex flex-wrap w-full h-fit rounded-lg justify-around">
-                    <div className='block w-full h-fit pl-2 pr-1 py-4 my-6 rounded-lg sm:w-5/12 sm:h-fit sm:px-2 sm:py-6 sm:my-14'>
-                        <p className='my-6 text-base font-500 sm:text-lg'>{parrafo1}</p>
-                        <p className='my-6 text-base font-500 sm:text-lg'>{parrafo2}</p>
+                    <div className='block w-full h-fit p-8 my-6 rounded-lg bg-neutral-900 shadow-inner shadow-stone-700 dark:shadow-slate-200 sm:w-5/12 sm:h-fit sm:p-8 sm:my-14 lg:p-12 lg:my-18'>
+                        <p className='my-6 text-base text-slate-200 font-500 sm:text-lg'>{parrafo1}</p>
+                        <p className='my-6 text-base text-slate-200 font-500 sm:text-lg'>{parrafo2}</p>
 
                         <div className='flex w-fit h-fit mx-auto mt-6 px-4 py-1 rounded-lg hover:bg-blue-400 hover:underline hover:translate-x-1'>
                             <a 
                                 href="mailto:juaneguiabad1639@gmail.com"
-                                className='text-base text-blue-800 dark:text-blue-300 font-500 italic sm:text-xl'
+                                className='text-base text-blue-300 font-500 italic sm:text-xl'
                             >Contactar conmigo <FontAwesomeIcon icon={faEnvelope} className="text-lg font-bold mt-2 ml-2"/>
                             </a>
                         </div>
                     </div>
 
-                    <div className='block w-full h-fit py-6 my-6 rounded-lg sm:w-5/12 sm:h-fit sm:py-14 sm:my-14'>
+                    <div className='block w-full h-fit py-6 rounded-lg sm:w-5/12 sm:h-fit sm:py-14'>
                         <div className='block w-full h-fit rounded-lg bg-blue-500 shadow shadow-stone-700 dark:shadow-stone-100 sm:w-full sm:h-fit'>
                             <div className='block w-full h-fit bg-cyan-200 dark:bg-neutral-400 rounded-lg'>
                                 <h1 className='text-center text-xl py-2 bg-cyan-300 dark:bg-neutral-500 font-bold rounded-t-lg sm:text-2xl'>Ver otros de mis portfolios hechos en:</h1>
@@ -49,7 +49,7 @@ export const Sobremi = ({txtH2, parrafo1, parrafo2}) => {
                     </div>
                 </section>
 
-                <section className="flex w-full h-fit rounded-lg justify-start">
+                <section className="flex w-full h-fit rounded-lg justify-around">
                     <div 
                         className="flex flex-wrap w-full h-fit my-6 rounded-lg justify-around bg-blue-500 dark:bg-neutral-500 shadow shadow-stone-700 dark:shadow-stone-100 sm:w-5/12 sm:my-14"
                     >
