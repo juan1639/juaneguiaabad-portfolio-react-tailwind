@@ -13,6 +13,7 @@ import { Header } from '../components/Header'
 import { Darkmode } from '../components/Darkmode'
 import { Navbar } from '../components/Navbar'
 import { Sobremi } from '../components/Sobremi'
+import { MisHerramientas } from '../components/MisLenguajes'
 import { MisProyectos } from '../components/MisProyectos'
 import { Settings } from '../constants/constants'
 
@@ -85,10 +86,10 @@ export default function Index() {
             parrafo2='Los proyectos que se pueden ver en esta página están hechos en su mayoría en vanilla javaScript.'
           />
           }
+          {mostrar === 'Mis herramientas' && <MisHerramientas txtH2="Mis herramientas"/>}
           {mostrar === 'Vídeos' && <MisProyectos json={infoJsonVideos} txtH2="Mis vídeos" txtBoton="" />}
           {mostrar === 'Proyectos' && fetchDone && <MisProyectos json={infoJson} txtH2="Mis Proyectos" txtBoton="Jugar" />}
           {mostrar === 'Repositorios' && <MisProyectos json={infoJsonRepos} txtH2="Mis Repositorios" txtBoton="Ver" />}
-
         </section>
 
       </main>
