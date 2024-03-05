@@ -10,17 +10,17 @@ export class Settings {
 
     static txtNavbar = [
         'Sobre mí',
-        'Mis herramientas',
         'Proyectos',
         'Vídeos',
-        'Repositorios'
+        'Repositorios',
+        'Mis herramientas'
     ];
 
     static urlNavbar = [
         `${Settings.endpointUrl.slice(0, -14)}sobremi`,
-        `${Settings.endpointUrl.slice(0, -14)}misherramientas`,
         `${Settings.endpointUrl.slice(0, -14)}proyectos`,
-        `${Settings.endpointUrl.slice(0, -14)}videos`
+        `${Settings.endpointUrl.slice(0, -14)}videos`,
+        `${Settings.endpointUrl.slice(0, -14)}misherramientas`
     ];
 
     static valores_iniciales = {
