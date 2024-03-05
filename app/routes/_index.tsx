@@ -34,7 +34,7 @@ export default function Index() {
 
   useEffect(() => {
 
-    fetch(Settings.endpoint, {cache: "no-cache"})
+    fetch(Settings.endpointUrl)
       .then(res => res.json())
       .then(response => {
         setLoadingJson(false)

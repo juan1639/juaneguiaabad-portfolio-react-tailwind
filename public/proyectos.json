@@ -25,6 +25,14 @@
             "descripcion": "Recreación de un juego de naves tipo Galaxian, Space Invaders, etc. usando la librería Phaser"
         },
         {
+            "nombre": "PacClon-Phaser",
+            "imagen": "./src/img/miniatura-pacClon-phaser-pre.png",
+            "githubURL": "https://github.com/juan1639/PacClon-phaser",
+            "url": "https://juan1639.github.io/PacClon-phaser",
+            "lenguaje": "./src/img/javascript-1.svg",
+            "descripcion": "Recreación del juego clásico Pacman, usando la librería Phaser"
+        },
+        {
             "nombre": "Conecta4",
             "imagen": "./src/img/miniatura-4raya.png",
             "githubURL": "https://github.com/juan1639/Cuatro-rayaJs",
@@ -47,6 +55,14 @@
             "url": "https://juan1639.github.io/DonkeyJon",
             "lenguaje": "./src/img/javascript-1.svg",
             "descripcion": "Recreación de un juego de tipo plataformas verticales en JavaScript vanilla, usando sólo la etiqueta canvas"
+        },
+        {
+            "nombre": "Tiro con Arco - Phaser",
+            "imagen": "./src/img/miniatura-tiroArco.png",
+            "githubURL": "https://github.com/juan1639/tiroarco",
+            "url": "https://juan1639.github.io/tiroarco",
+            "lenguaje": "./src/img/javascript-1.svg",
+            "descripcion": "Simple minijuego de tiro con arco usando la librería Phaser."
         },
         {
             "nombre": "Galaximi",
@@ -245,6 +261,14 @@
             "descripcion": "Proyecto acerca de un juego tipo Pacman realizado en python usando la librería pygame."
         },
         {
+            "nombre": "PacClon-Phaser",
+            "imagen": "./src/img/miniatura-pacClon-phaser-pre.png",
+            "githubURL": "https://github.com/juan1639/PacClon-phaser",
+            "url": "https://github.com/juan1639/PacClon-phaser",
+            "lenguaje": "./src/img/javascript-1.svg",
+            "descripcion": "Recreación del juego clásico Pacman, usando la librería Phaser"
+        },
+        {
             "nombre": "Galaximi-Phaser",
             "imagen": "./src/img/miniatura-galaximi.png",
             "githubURL": "https://github.com/juan1639/Galaximi-phaser",
@@ -267,6 +291,14 @@
             "url": "https://juan1639.github.io/Galaximi2",
             "lenguaje": "./src/img/javascript-1.svg",
             "descripcion": "Proyecto sobre un juego tipo Galaxian, space invaders, etc. programado en vanilla JavaScript."
+        },
+        {
+            "nombre": "Tiro con Arco - Phaser",
+            "imagen": "./src/img/miniatura-tiroArco.png",
+            "githubURL": "https://github.com/juan1639/tiroarco",
+            "url": "https://github.com/juan1639/tiroarco",
+            "lenguaje": "./src/img/javascript-1.svg",
+            "descripcion": "Simple minijuego de tiro con arco usando la librería Phaser."
         },
         {
             "nombre": "SnakeJS",
